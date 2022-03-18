@@ -4,8 +4,8 @@ public class ProxyPatternClient {
 
     private Subject subject;
 
-    public ProxyPatternClient(RealSubject realSubject) {
-        this.subject = realSubject;
+    public ProxyPatternClient(Subject subject) {
+        this.subject = subject;
     }
 
     public void execute() {
