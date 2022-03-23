@@ -79,7 +79,7 @@ public class AdvisorTest {
         @Override
         public boolean matches(Method method, Class<?> targetClass) {
             boolean result = method.getName().equals(matchName);
-            log.info("포인트컷 호출 method.getName(), targetClass={}", method.getName(), targetClass);
+            log.info("포인트컷 호출 method={}, target={}", method.getName(), targetClass);
             log.info("포인트컷 결과 result={}", result);
             return result;
         }
