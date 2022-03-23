@@ -20,7 +20,7 @@ public class AdvisorTest {
 
     @Test
     void advisorTest1() {
-        ServiceImpl target = new ServiceImpl();
+        ServiceInterface target = new ServiceImpl();
         ProxyFactory proxyFactory = new ProxyFactory(target);
         DefaultPointcutAdvisor advisor = new DefaultPointcutAdvisor(Pointcut.TRUE, new TimeAdvice());
         proxyFactory.addAdvisor(advisor);
@@ -33,7 +33,7 @@ public class AdvisorTest {
     @Test
     @DisplayName("직접 만든 포인트컷")
     void advisorTest2() {
-        ServiceImpl target = new ServiceImpl();
+        ServiceInterface target = new ServiceImpl();
         ProxyFactory proxyFactory = new ProxyFactory(target);
 
         DefaultPointcutAdvisor advisor = new DefaultPointcutAdvisor(new MyPointCut(), new TimeAdvice());
@@ -47,7 +47,7 @@ public class AdvisorTest {
     @Test
     @DisplayName("스프링이 제공하는 포인트컷")
     void advisorTest3() {
-        ServiceImpl target = new ServiceImpl();
+        ServiceInterface target = new ServiceImpl();
         ProxyFactory proxyFactory = new ProxyFactory(target);
         NameMatchMethodPointcut pointcut = new NameMatchMethodPointcut();
         pointcut.setMappedName("save");
